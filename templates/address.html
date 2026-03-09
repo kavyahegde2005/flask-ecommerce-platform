@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% include 'nav1.html' %}
+{% block title %}Your Cart{% endblock %}
+
+{% block content %}
+<h1>Enter Your Shipping Details</h1>
+<form method="POST">
+  <label>Name:</label><br>
+  <input type="text" name="name" required><br><br>
+
+  <label>Phone:</label><br>
+  <input type="text" name="phone" required><br><br>
+
+  <label>Address:</label><br>
+  <textarea name="address" rows="3" required></textarea><br><br>
+
+  <label>Pincode:</label><br>
+  <input type="text" name="pincode" required><br><br>
+
+  <button type="submit">Continue to Payment</button>
+  <div class="next-steps">
+  <a href="{{ url_for('shop_page') }}" class="btn">Return to Shop</a>
+  </div>
+</form>
+{% endblock %}

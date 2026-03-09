@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reg.css')}}">
+</head>
+<body>
+    
+    <h2>User Registration</h2>
+    <form action="/register" method="POST">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" placeholder="Enter username" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" placeholder="Create password" required><br><br>
+        <input type="submit" value="Register">
+
+    </form>
+  <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+</body>
+</html>

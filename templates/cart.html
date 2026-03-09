@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Your Cart{% endblock %}
+{% include 'nav1.html' %}
+{% block content %}
+<div class="cart-container">
+<h1>Your Cart</h1>
+{% if cart_items|length == 0 %}
+  <p>Your cart is empty. <a href="{{ url_for('shop_page') }}">Go shopping</a>.</p>
+{% else %}
+  <ul>
+    {% for item in cart_items %}
+      <li>
+        <img src="{{ item.image }}" alt="{{ item.name }}" width="100">
+        {{ item.name }} × {{ item.quantity }} — ₹{{ item.price * item.quantity }}
+
+    
+        <form action="{{ url_for('remove_from_cart') }}" method="POST" style="display:inline;">
+          <input type="hidden" name="cart_id" value="{{ item.cart_id }}">
+          <button type="submit" class="btn-remove">Remove</button>
+        </form>
+
+        <form action="{{ url_for('buy_now') }}" method="GET" style="display:inline;">
+          <button type="submit">Buy Now</button>
+        </form>
+
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+</div>
+{% endblock %}

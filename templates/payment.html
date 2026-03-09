@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Your Cart{% endblock %}
+
+{% block content %}<h1>Select Payment Method</h1>
+<form method="POST">
+  <input type="radio" id="phonepe" name="payment_method" value="PhonePe" required>
+  <label for="phonepe">PhonePe</label><br>
+
+  <input type="radio" id="gpay" name="payment_method" value="GPay">
+  <label for="gpay">Google Pay (GPay)</label><br>
+
+  <input type="radio" id="cod" name="payment_method" value="Cash on Delivery">
+  <label for="cod">Cash on Delivery</label><br><br>
+
+  <button type="submit">Confirm Payment</button>
+  <div class="next-steps">
+  <a href="{{ url_for('buy_now') }}" class="btn">Back</a>
+  </div>
+</form>
+{% endblock %}

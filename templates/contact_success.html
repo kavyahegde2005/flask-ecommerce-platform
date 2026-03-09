@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% include 'nav1.html' %}
+{% block title %}Message Sent{% endblock %}
+
+{% block content %}
+
+<div class="success-container">
+    <h1>Thank you, {{ name }}!</h1>
+    <p>Your message has been received successfully. We'll get back to you soon.</p>
+
+    <div class="next-steps">
+        <a href="{{ url_for('shop_page') }}" class="btn">Return to Shop</a>
+        <a href="{{ url_for('contact') }}" class="btn">Send Another Message</a>
+    </div>
+</div>
+{% endblock %}

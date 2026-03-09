@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Hoodie Store{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/shop.css') }}">
+</head>
+<body>
+
+    <main>
+        {% block content %}
+
+        {% if session.name %}
+        <p> Welcome, {{ session.name }}! </p>
+        {% endif %}
+
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Heaven. All rights reserved.</p>
+    </footer>
+</body>
+</html>

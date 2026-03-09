@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% include 'nav1.html' %}
+{% block title %}Your Cart{% endblock %}
+
+{% block content %}
+<h1>Order Confirmed!</h1>
+<p>You chose: <strong>{{ method }}</strong></p>
+
+{% if method == "Cash on Delivery" %}
+<p>Please pay when your hoodie is delivered.</p><br><br>
+{% else %}
+<p>Redirecting to {{ method }} for payment...</p>
+{% endif %}
+{% endblock %}

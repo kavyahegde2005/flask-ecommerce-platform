@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+{% include 'nav1.html' %}
+<div class="search-results">
+<h1>Results for "{{ query }}"</h1>
+
+{% if products|length == 0 %}
+  <p>No products found. <a href="{{ url_for('shop_page') }}">Back to shop</a></p>
+{% else %}
+  <ul>
+    {% for product in products %}
+      <li>
+        <img src="{{ product.image }}" alt="{{ product.name }}" width="100">
+        <strong>{{ product.name }}</strong> — ₹{{ product.price }}
+
+        <form action="{{ url_for('add_to_cart',product_id=product.id) }}" method="POST" style="display:inline;">
+          <input type="hidden" name="product_id" value="{{ product.id }}">
+          <button type="submit">Add to Cart</button>
+        </form><br>
+
+        <form action="{{ url_for('buy_now', product_id=product.id) }}" method="GET" style="display:inline;">
+          <button type="submit">Buy Now</button>
+        </form>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+</div>
+{% endblock %}

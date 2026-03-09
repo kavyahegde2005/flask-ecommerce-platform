@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include 'nav.html' %}
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1>We Bring The Hoodie To Life</h1>
+                <h3>Be comfortable. Be inspired. </h3>
+                <p>
+                    At Heaven, we believe a hoodie is more than just a piece of clothing — it's a feeling. It's the warmth you reach for on chilly mornings and the comfort that wraps around you after a long day. Our hoodies are designed to inspire confidence, spark creativity, and make you feel right at home wherever you go. Each stitch is a blend of style and soul, crafted to celebrate your individuality. Whether you're lounging, exploring, or expressing yourself, our hoodies move with you and speak for you. We keep it simple, soft, and stylish — because being your beautiful best should feel effortless. Loved for their timeless design and cozy fit, Heaven hoodies are your everyday essentials with a touch of magic.
+                </p>
+
+                <a href="{{url_for('shop_page')}}" class="btn">Shop Now</a>
+            </div>
+            
+            <div class="image">
+            <img src="{{ url_for('static', filename='images/img.jpg') }}" alt="Hoodie model">
+            </div>
+        </section>
+        <footer> <p>&copy; 2025 Heaven. All rights reserved.</p> </footer>
+</body>
+</html>

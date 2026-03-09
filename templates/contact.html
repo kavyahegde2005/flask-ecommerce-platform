@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% include 'nav1.html' %}
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<h1>Contact Us</h1>
+<p>You can reach us using the details below or by filling out the form.</p>
+
+<div class="contact-details">
+  <p><strong>Email:</strong> supportheaven@gmail.com</p>
+  <p><strong>Phone:</strong> +91 94356 78421</p>
+  <p><strong>Address:</strong> Heaven, Jayanagar 9th Block, Bengaluru, Karnataka</p>
+</div>
+
+<h2>Send us a message</h2>
+<form method="POST">
+  <label>Name:</label><br>
+  <input type="text" name="name" required><br><br>
+
+  <label>Email:</label><br>
+  <input type="email" name="email" required><br><br>
+
+  <label>Message:</label><br>
+  <textarea name="message" rows="5" required></textarea><br><br>
+
+  <button type="submit">Send</button>
+</form>
+{% endblock %}
