@@ -14,10 +14,10 @@
         <img src="{{ url_for('static', filename='images/' + item.image) }}" alt="{{ item.name }}" width="100">
         {{ item.name }} — ₹{{ item.price }}
 
-        <form action="{{ url_for('remove_from_heart') }}" method="POST" style="display:inline;">
-          <input type="hidden" name="heart_id" value="{{ item.heart_id }}">
-          <button type="submit" class="btn-remove">Remove</button>
-        </form>
+        <form action="{{ url_for('remove_from_heart') }}" method="POST">
+    <input type="hidden" name="heart_id" value="{{ item.heart_id }}">
+    <button type="submit">Remove</button>
+</form>
         
         <form action="{{ url_for('buy_now') }}" method="GET" style="display:inline;">
           <button type="submit">Buy Now</button>

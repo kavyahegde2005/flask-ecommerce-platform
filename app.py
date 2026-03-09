@@ -208,7 +208,17 @@ def add_to_heart():
 
     return redirect(url_for('shop_page'))
 
+@app.route('/remove_from_heart', methods=['POST'])
+def remove_from_heart():
 
+    heart_id = request.form.get('heart_id')
+
+    conn = get_db_connection()
+    conn.execute("DELETE FROM heart WHERE id=?", (heart_id,))
+    conn.commit()
+    conn.close()
+
+    return redirect(url_for('wishlist'))
 
 @app.route('/wishlist')
 def wishlist():
