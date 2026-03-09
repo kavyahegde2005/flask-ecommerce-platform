@@ -11,7 +11,7 @@
   <ul>
     {% for item in heart_items %}
       <li>
-        <img src="{{ item.image }}" alt="{{ item.name }}" width="100">
+        <img src="{{ url_for('static', filename='images/' + item.image) }}" alt="{{ item.name }}" width="100">
         {{ item.name }} — ₹{{ item.price }}
 
         <form action="{{ url_for('remove_from_heart') }}" method="POST" style="display:inline;">

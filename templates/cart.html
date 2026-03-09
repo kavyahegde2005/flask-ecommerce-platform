@@ -10,7 +10,7 @@
   <ul>
     {% for item in cart_items %}
       <li>
-        <img src="{{ item.image }}" alt="{{ item.name }}" width="100">
+        <img src="{{ url_for('static', filename='images/' + item.image) }}" alt="{{ item.name }}" width="100">
         {{ item.name }} × {{ item.quantity }} — ₹{{ item.price * item.quantity }}
 
     
